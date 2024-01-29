@@ -36,17 +36,17 @@ export default function TextForm(props){
 
   return (
       <>
- <div className="container">
+ <div className="container" style={{color: props.mode==='dark'?'white':'black'}}>{/* here using {{}} in this we can use objects  */}
      <h1>{props.heading}</h1>
 <div className="mb-3">
-  <textarea className="form-control" value={text} onChange={handleOnChange} id="myBox" rows="15"></textarea>
+  <textarea className="form-control" value={text} style={{backgroundColor: props.mode==='dark'?'grey':'white',color: props.mode==='dark'?'white':'black'}} onChange={handleOnChange} id="myBox" rows="15"></textarea>
 </div>
-<button className="btn btn primary3" onClick={handleUpClick}>Convert to UpperCase</button>
-<button className="btn btn primary mx-2 " onClick={handleLoClick}>Convert to LowerCase</button>
-<button className="btn btn primary mx-2 " onClick={handleReverseClick}>Reverse</button>
-<button className="btn btn primary mx-3 " onClick={handleClearClick}>Clear</button>
+<button type='button' className="btn btn secondary mx-1" style={{color: props.mode==='dark'?'white':'black'}} onClick={handleUpClick}>Convert to UpperCase</button>
+<button className="btn btn primary mx-1 " style={{color: props.mode==='dark'?'white':'black'}} onClick={handleLoClick}>Convert to LowerCase</button>
+<button className="btn btn primary mx-1 " style={{color: props.mode==='dark'?'white':'black'}} onClick={handleReverseClick}>Reverse</button>
+<button className="btn btn primary mx-1 " style={{color: props.mode==='dark'?'white':'black'}} onClick={handleClearClick}>Clear</button>
 </div>
-<div className="container my-3">
+<div className="container my-3" style={{color: props.mode==='dark'?'white':'black'}}>
     <h1>Your text Summarry</h1>
     <p>
          It will take {0.008*text.split(" ").length} minutes to read {text.split(" ").length}words and {text.length}characters
